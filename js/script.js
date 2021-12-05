@@ -75,14 +75,24 @@ function addPagination(list) {
   } 
   
   // give the first pagination button a class of "active"
+ 
   const btn1 = document.querySelector('button');
   btn1.className = 'active';
   console.log(btn1);
+ 
   // create an event listener on the `link-list` element
-    // if the click target is a button:
+    
+  linkList.addEventListener('click', (e) => {  
+    const targetBtn = e.target;
+      // if the click target is a button: 
+     if(targetBtn.tagName === 'BUTTON'){
       // remove the "active" class from the previous button
+      btn1.className = 'inactive';
       // add the active class to the clicked button
+      targetBtn.className = 'active';
       // call the showPage function passing the `list` parameter and page to display as arguments
+    } 
+  })
 }   
 
 
