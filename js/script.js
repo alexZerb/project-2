@@ -36,7 +36,7 @@ function showPage(list, page) {
 }
 
 /*
-    Add pagination creates required number of buttons for all data to be available. When buttons are clicked, showPage function is called to replace old content with target content.    
+    Add pagination creates required number of buttons for all data to be available. When buttons are clicked, showPage function is called to replace old content with new target content.    
 */
 
 function addPagination(list) {
@@ -56,7 +56,7 @@ function addPagination(list) {
   
     linkList.append(button);
   } 
- // this highlights page 1 when page first loads
+// this highlights page 1 when page first loads
   const btn1 = document.querySelector('button');
   btn1.className = 'active';
   console.log(btn1);
