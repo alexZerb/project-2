@@ -4,7 +4,7 @@ FSJS Project 2 - Data Pagination and Filtering
 */
 console.log(data);
 
-const itemsPerPage = 9;
+const itemsPerPage = 10;
 
 /*
     showPage function starts by taking 9 of 42 objects from data.js. each object is then displayed as list item on page. 
@@ -17,7 +17,7 @@ function showPage(list, page) {
   
  for (let i = 0; i < list.length; i++) {
    let currentStudents = list[i];
-    
+  // conditional to make a li for only 9 students 
    if (list.indexOf(currentStudents) >= startIndex && list.indexOf(currentStudents) < endIndex) {
       const li = document.createElement('li'); 
       li.className = 'student-item cf'
@@ -30,14 +30,14 @@ function showPage(list, page) {
         <div class="joined-details">
           <span class="date">Joined ${currentStudents.registered.date}</span>
         </div>
-      `;
+      `;   
       studentList.append(li);
    } 
  }
 }
 
 /*
-    Add pagination creates required number of buttons for all data to be available. When clicked, showPage function is called to replace old content with new content.    
+    Add pagination creates required number of buttons for all data to be available. When buttons are clicked, showPage function is called to replace old content with target content.    
 */
 
 function addPagination(list) {
@@ -57,7 +57,7 @@ function addPagination(list) {
   
     linkList.append(button);
   } 
- 
+ // this highlights page 1 when page first loads
   const btn1 = document.querySelector('button');
   btn1.className = 'active';
   console.log(btn1);
@@ -65,7 +65,7 @@ function addPagination(list) {
   linkList.addEventListener('click', (e) => {  
     const targetBtn = e.target;
     const previousBtn = document.querySelector('.active') 
-     
+  
     if(targetBtn.tagName === 'BUTTON'){
       btn1.className = 'inactive';
       previousBtn.className = 'inactive';
@@ -74,8 +74,6 @@ function addPagination(list) {
     } 
   })
 }   
-
-
 // Call functions 
 showPage(data, 1);
 addPagination(data);
