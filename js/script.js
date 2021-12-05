@@ -2,7 +2,6 @@
 Treehouse Techdegree: Alex Szczerba
 FSJS Project 2 - Data Pagination and Filtering
 */
-console.log(data);
 
 const itemsPerPage = 10;
 
@@ -17,7 +16,7 @@ function showPage(list, page) {
   
  for (let i = 0; i < list.length; i++) {
    let currentStudents = list[i];
-  // conditional to make a li for only 9 students 
+  // conditional to make list items for max 10 students 
    if (list.indexOf(currentStudents) >= startIndex && list.indexOf(currentStudents) < endIndex) {
       const li = document.createElement('li'); 
       li.className = 'student-item cf'
@@ -69,7 +68,7 @@ function addPagination(list) {
     if(targetBtn.tagName === 'BUTTON'){
       btn1.className = 'inactive';
       previousBtn.className = 'inactive';
-      targetBtn.className = 'active';
+      targetBtn.className = 'active';  
       showPage(data, e.target.textContent);
     } 
   })
