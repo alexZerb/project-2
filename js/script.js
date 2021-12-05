@@ -57,19 +57,27 @@ function addPagination(list) {
   linkList.innerHTML = '';
  
   // loop over the number of pages needed
+  
   for(let i = 1; i <= numOfPages; i++) {
-  // create the elements needed to display the pagination button
+  
+    // create the elements needed to display the pagination button
+  
     const button = document.createElement('li');
     button.innerHTML = `
         <li>
           <button type='button'>${i}</button>
         </li>
     `;
+  
     // insert the above elements
+  
     linkList.append(button);
   } 
+  
   // give the first pagination button a class of "active"
-
+  const btn1 = document.querySelector('button');
+  btn1.className = 'active';
+  console.log(btn1);
   // create an event listener on the `link-list` element
     // if the click target is a button:
       // remove the "active" class from the previous button
