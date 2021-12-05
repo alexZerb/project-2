@@ -57,9 +57,17 @@ function addPagination(list) {
   linkList.innerHTML = '';
  
   // loop over the number of pages needed
-    // create the elements needed to display the pagination button
+  for(let i = 1; i <= numOfPages; i++) {
+  // create the elements needed to display the pagination button
+    const button = document.createElement('li');
+    button.innerHTML = `
+        <li>
+          <button type='button'>${i}</button>
+        </li>
+    `;
     // insert the above elements
-
+    linkList.append(button);
+  } 
   // give the first pagination button a class of "active"
 
   // create an event listener on the `link-list` element
@@ -72,3 +80,4 @@ function addPagination(list) {
 
 // Call functions
 showPage(data, 1);
+addPagination(data);
