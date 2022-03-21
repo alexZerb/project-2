@@ -66,6 +66,7 @@ function addPagination(list) {
     const previousBtn = document.querySelector('.active') 
   
     if(targetBtn.tagName === 'BUTTON'){
+      console.log('boom');
       btn1.className = 'inactive';
       previousBtn.className = 'inactive';
       targetBtn.className = 'active';  
